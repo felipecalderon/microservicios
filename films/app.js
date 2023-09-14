@@ -1,5 +1,5 @@
 const server = require("./server");
-
-server.listen(4003, () => {
-  console.log("Server listening on port 4003");
+const port = process.env.PORT || 4003
+server.listen(port, () => {
+  console.log(`Server funcionando en puerto: ${port}`);
 });
