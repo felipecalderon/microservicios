@@ -8,17 +8,17 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 app.use('/characters', createProxyMiddleware({
-    target: 'http://localhost:4001',
+    target: 'http://characters:4001',
     changeOrigin: true
 }))
 
 app.use('/planets', createProxyMiddleware({
-    target: 'http://localhost:4002',
+    target: 'http://planets:4002',
     changeOrigin: true
 }))
 
 app.use('/films', createProxyMiddleware({
-    target: 'http://localhost:4003',
+    target: 'http://films:4003',
     changeOrigin: true
 }))
 
