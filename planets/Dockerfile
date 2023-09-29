@@ -1,11 +1,13 @@
-FROM node:20
+FROM node:18
 
-WORKDIR /planets
+WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 
 RUN npm install
 
-EXPOSE 4002
+COPY . .
+
+EXPOSE 8003
 
 CMD [ "npm", "start" ]

@@ -1,11 +1,13 @@
-FROM node:20
+FROM node:18
 
-WORKDIR /gateway
+WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 
 RUN npm install
 
-EXPOSE 4000
+COPY . .
+
+EXPOSE 8000
 
 CMD [ "npm", "start" ]
